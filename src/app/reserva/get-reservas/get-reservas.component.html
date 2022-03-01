@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<section class="u-align-center u-clearfix u-palette-1-base u-section-1" id="sec-f117">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-expanded-width u-table u-table-responsive u-table-1">
+        <table class="u-table-entity u-table-entity-1">
+          <colgroup>
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+          </colgroup>
+          <thead class="u-black u-table-header u-table-header-1">
+            <tr style="height: 21px;">
+              <th class="u-border-1 u-border-black u-table-cell">Pelicula</th>
+              <th class="u-border-1 u-border-black u-table-cell">Sala</th>
+              <th class="u-border-1 u-border-black u-table-cell">Hora</th>
+              <th class="u-border-1 u-border-black u-table-cell">Sillas</th>
+              <th class="u-border-1 u-border-black u-table-cell">Nombres Responsable</th>
+              <th class="u-border-1 u-border-black u-table-cell">Eliminar</th>
+              <th class="u-border-1 u-border-black u-table-cell">Modificar Reserva</th>
+            </tr>
+          </thead>
+          <tbody class="u-table-body">
+            <ng-container *ngFor="let reserva of reservasUser">
+              <tr style="height: 75px;">
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{reserva.pelicula}}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{reserva.sala.id}}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{reserva.hora}}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">
+                  <ng-container *ngFor="let silla of reserva.silla">
+                    {{silla.numeroSilla}},
+                  </ng-container>  
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{reserva.usuario.nombres}}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><button class="u-border-1 u-border-grey-dark-1 u-table-cell" (click)="eliminarReserva(reserva)">Eliminar</button> </td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><button class="u-border-1 u-border-grey-dark-1 u-table-cell" [routerLink]="['/reserva/',reserva.sala.pelicula.id,reserva.id]">Modificar</button> </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+<app-footer></app-footer>

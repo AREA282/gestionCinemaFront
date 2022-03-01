@@ -1,0 +1,34 @@
+<div class="priemrDiv ">
+  <form class="login-form">
+    <p>
+      <span class="fa-stack fa-lg">
+        <a [routerLink]="['']" class="u-image logoCidenet u-image-1" data-image-width="554" data-image-height="342">
+          <img src="../../../assets/images/cidenet-software-a-la-medida-medellin.png" class="logo-form">
+        </a>
+      </span>
+    </p>
+    <input type="email" class="login-username" autofocus="true" placeholder="Email" [formControl]="correo" />
+    <div *ngIf="correo.errors && correo.touched" style="color: red; font-size: medium;">
+      <p *ngIf="correo.hasError('required')" >
+          Es un campo requerido
+      </p>
+      <p *ngIf="correo.hasError('pattern')">
+          Debes diligenciar un correo valido
+      </p>
+  </div>
+    <input type="password" class="login-password" placeholder="Password" [formControl]="password" />
+    <div *ngIf="password.errors && password.touched" style="color: red; font-size: medium;" >
+      <p *ngIf="password.hasError('required')" >
+          Es un campo requerido
+      </p>
+      <p *ngIf="password.hasError('pattern')" >
+          Debes de tener una mayuscula, un numero, y un caracter especial
+      </p>
+  </div>
+    <input name="Login" type="button" value="Iniciar sesion" class="login-submit btn" (click)='login()' />
+    <input name="Login" type="submit" value="Registrarse" class="login-submit btn" [routerLink]="['/register']" />
+  </form>
+  <a href="#" class="login-forgot-pass">forgot password?</a>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div>
+</div>

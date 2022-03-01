@@ -1,0 +1,61 @@
+<app-header></app-header>
+<section class="u-clearfix u-palette-1-base u-section-1" id="sec-ca9f">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="fr-view u-align-center u-clearfix u-rich-text u-text u-text-1">
+      <h1 style="text-align: left; font-size: 250%;">{{peliculaCon.titulo}}<span style="line-height: 2.0;">&nbsp;</span>
+      </h1>
+    </div>
+    <img class="u-image u-image-default u-image-1" src="{{peliculaCon.imagen}}" alt="" data-image-width="300"
+      data-image-height="450">
+    <div class="fr-view u-align-center u-clearfix u-rich-text u-text u-text-2">
+      <p style="text-align: left;">Título original: {{peliculaCon.titulo}}</p>
+      <p style="text-align: left;">Duracion: {{peliculaCon.duracion}}</p>
+      <p style="text-align: left;">Duracion: {{peliculaCon.hora}}</p>
+      <p style="text-align: left;">Hora presentacion: <select name="select" 
+          style="color: black;">
+          <option hidden default> Seleccione hora</option>
+          <option value="11:00" class="select">11:00</option>
+          <option value="14:00" class="select">14:00</option>
+          <option value="16:00" class="select">16:00</option>
+          <option value="18:00" class="select">18:00</option>
+          <option value="20:00" class="select">20:00</option>
+        </select></p>
+
+      <p style="text-align: left;">Precio: {{peliculaCon.precio}}</p>
+      <p style="text-align: left;">Género: {{peliculaCon.genero}}&nbsp;</p>
+      <p style="text-align: left;">Pais: {{peliculaCon.pais}}</p>
+      <p style="text-align: left;">
+        <span style="line-height: 2.0;">&nbsp;</span>
+      </p>
+    </div>
+    <a (click)="reserva()"
+      class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-4-base u-radius-50 u-btn-1">Reservar</a>
+    <div class="u-align-left u-expanded-width-sm u-expanded-width-xs u-video u-video-1">
+      <div class="embed-responsive embed-responsive-1">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/mLQXsSoLog8" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-58eb">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">Texto de ejemplo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+  </div>
+</footer>
+<section class="u-backlink u-clearfix u-grey-80">
+  <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+    <span>Website Templates</span>
+  </a>
+  <p class="u-text">
+    <span>created with</span>
+  </p>
+  <a class="u-link" href="" target="_blank">
+    <span>Website Builder Software</span>
+  </a>.
+</section>

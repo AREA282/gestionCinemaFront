@@ -1,0 +1,75 @@
+
+<div class="priemrDiv ">
+    <form [formGroup]="form" class="login-form">
+        <p class="login-text">
+            <span class="fa-stack fa-lg">
+                <a [routerLink]="['']" class="u-image u-logo u-image-1" data-image-width="554" data-image-height="342">
+                    <img src="../../../assets/images/cidenet-software-a-la-medida-medellin.png" class="logo-form">
+                  </a>
+            </span>
+        </p>
+            <input class="login-username" type="text" name="Nombre" placeholder="Nombre" formControlName="nombres" />
+            <div *ngIf="form.get('nombres')!.errors && form.get('nombres')!.touched" style="color: red; font-size: medium;">
+                <p *ngIf="form.get('nombres')!.hasError('required')" >
+                    Es un campo requerido
+                </p>
+                <p *ngIf="form.get('nombres')!.hasError('pattern')">
+                    Tu nombre solo debe contener letras.
+                </p>
+            </div>
+            <input class="login-username" type="text" name="Apellido" placeholder="Apellido" formControlName="apellidos" />
+            <div *ngIf="form.get('apellidos')!.errors && form.get('apellidos')!.touched" style="color: red; font-size: medium;">
+                <p *ngIf="form.get('apellidos')!.hasError('required')"  >
+                    Es un campo requerido
+                </p>
+                <p *ngIf="form.get('apellidos')!.hasError('pattern')">
+                    Tu nombre solo debe contener letras.
+                </p>
+            </div>
+            <input class="login-username" placeholder="Correo" type="text" formControlName="correo" />
+            <div *ngIf="form.get('correo')!.errors && form.get('correo')!.touched" style="color: red; font-size: medium;">
+                <p *ngIf="form.get('correo')!.hasError('required')" >
+                    Es un campo requerido
+                </p>
+                <p *ngIf="form.get('correo')!.hasError('pattern')">
+                    Debes diligenciar un correo valido
+                </p>
+            </div>
+            <input class="login-password" type="password" name="Password" placeholder="Password" formControlName="password" />
+            <div *ngIf="form.get('password')!.errors && form.get('password')!.touched" style="color: red; font-size: medium;" >
+                <p *ngIf="form.get('password')!.hasError('required')" >
+                    Es un campo requerido
+                </p>
+                <p *ngIf="form.get('password')!.hasError('pattern')" >
+                    Debes de tener una mayuscula, un numero, y un caracter especial
+                </p>
+            </div>
+    
+            <input class="login-username" type="number" name="Documento" placeholder="Documento" formControlName="documento" />
+            <div *ngIf="form.get('documento')!.errors && form.get('documento')!.touched">
+                <p *ngIf="form.get('documento')!.hasError('required')" style="color: red; font-size: medium;" >
+                    Es un campo requerido
+                </p>
+            </div>
+            <div>
+                <select name="select" formControlName="tipo_documento" class="login-username">
+                     <option value="CC" class="select">Cedula</option>
+                     <option value="TI" class="select">Tarjeta de identidad</option> 
+
+                </select>
+            </div>
+            <div>
+                <select name="select" formControlName="tipo_usuario" class="login-username">
+                    <ng-container *ngFor = "let tipoUser of TipoUsuario">
+                        
+                     <option value="{{tipoUser.id}}" class="select">{{tipoUser.tipo}}</option>
+                    </ng-container> 
+                </select>
+            </div>
+            <input class="login-submit" type="submit" value="Registrarse" (click)='create()' />
+            <input class="login-submit" type="submit" value="Iniciar sesion" [routerLink]="['/login']" />
+    </form>
+    <a href="#" class="login-forgot-pass">forgot password?</a>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div>
+</div>

@@ -1,0 +1,52 @@
+<section class="u-clearfix u-palette-1-base u-section-1" id="carousel_39af" >
+  <div class="u-clearfix u-sheet u-sheet-1" >
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-container-style u-layout-cell u-left-cell u-size-22 u-layout-cell-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h3 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1" data-animation-name=""
+                data-animation-duration="0" data-animation-delay="0" data-animation-direction=""  *ngIf="userOn == false"> Bienvenido a Cinema
+              Cidenet </h3>
+                <h3 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1" data-animation-name=""
+                data-animation-duration="0" data-animation-delay="0" data-animation-direction=""  *ngIf="userOn == true"> <span> {{loguedUser.nombres}} </span> <br> <span>Nos complace tenerte en Cinema Cidenet</span>
+                </h3>
+            </div>
+          </div>
+          <div class="u-container-style u-layout-cell u-right-cell u-size-38 u-layout-cell-2" >
+            <div class="u-container-layout u-container-layout-2">
+              <p class="u-text u-text-2" style="font-size: medium;"> El cine es un arte y una técnica. Es el arte de
+                narrar historias mediante la proyección de imágenes, de allí que también se lo conozca con el nombre de
+                séptimo arte. Y es la técnica que consiste en proyectar fotogramas, de forma rápida y sucesiva, para
+                crear la ilusión de movimiento.
+              </p>
+              <a href="https://www.caracteristicas.co/cine/"
+                class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1">read
+                more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
+      <div class="u-gallery-inner u-gallery-inner-1">
+
+        <ng-container *ngFor="let pelicula of peliculas">
+          <a >
+            <div class="u-effect-fade u-gallery-item "> 
+              <div class="u-back-slide u-back-slide-1" data-image-width="1067" data-image-height="1600">
+                <img class="u-back-image u-expanded u-back-image-1" [routerLink]="['/infopelicula',pelicula.id]" src="{{pelicula.imagen}}"> 
+                <div class="hover-content" *ngIf="userAdmin == true">
+                  <a class="btn boton-superpuesto" (click)='deletePelicula(pelicula.id)'>Eliminar</a>                     
+                  <a class="btn boton-superpuesto2" [routerLink]="['/crearPelicula/',pelicula.id]">Modificar</a>
+                </div>
+              </div>          
+            </div>
+            
+          </a>
+
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

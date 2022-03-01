@@ -1,0 +1,30 @@
+.boton-superpuesto{  
+    position: absolute;
+    bottom:4em;
+    right:15em;
+    background-color:#478ac9;
+    border-radius:1.5em;
+    color:white;
+    text-transform:uppercase;
+    padding:1em 1.5em;
+}
+
+.boton-superpuesto2{  
+    position: absolute;
+    bottom:4em;
+    right:5em;
+    background-color:#478ac9;
+    border-radius:1.5em;
+    color:white;
+    text-transform:uppercase;
+    padding:1em 1.5em;
+
+}
+
+.fondo-principal{
+    animation: hue-rotate 6s infinite;
+    background: url('https://spheracinema.com/sites/default/files/styles/large_image/public/38846132282_ec5acbfb55_o.jpg');
+    background-size: cover;
+    -webkit-filter: grayscale(30%);
+    z-index: -1;
+  }

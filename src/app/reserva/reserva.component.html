@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<section class="u-clearfix u-palette-1-base u-section-1" id="sec-b5eb">
+  <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+    <img class="u-image u-image-default u-image-1" src="{{peliculaCon.imagen}}" alt="" data-image-width="300"
+      data-image-height="450">
+    <p class="u-text u-text-1">Sala: {{sala.id}}</p>
+    <p class="u-text u-text-2">Precio: {{valorTotal}}</p>
+    <p class="u-text u-text-2">Hora:</p>
+    <p class="u-text u-text-2">Sillas:</p>
+    <div class="u-table u-table-responsive u-table-1 row ">
+      <ng-container *ngFor="let silla of sillas">
+
+        <a *ngIf="silla.estadoSilla" class="u-btn u-button-style  col-md-2 sillaDisponible "
+          (click)='reservarSilla(silla)'>{{silla.numeroSilla}}</a>
+        <a *ngIf="silla.estadoSilla == false" class="u-btn u-button-style col-md-2 sillaNoDisponible "
+          (click)='desmarcarSilla(silla)'>{{silla.numeroSilla}}</a>
+      </ng-container>
+    </div>
+    
+    <a *ngIf="!reserva.id else elseBlock" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-4-base u-radius-50 u-btn-1"
+      (click)='create()'>Reservar</a>
+  </div>
+  <ng-template #elseBlock>
+  <a  class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-4-base u-radius-50 modificarReserva"
+    (click)='modificar()'>Modificar reserva</a></ng-template>
+
+
+</section>
+
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-58eb">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">Texto de ejemplo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+  </div>
+</footer>

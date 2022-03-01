@@ -1,0 +1,37 @@
+<div class="priemrDiv ">
+    <form [formGroup]="form" class="login-form">
+        <p class="login-text">
+            <span class="fa-stack fa-lg">
+                <a [routerLink]="['']" class="u-image u-logo u-image-1" data-image-width="554" data-image-height="342">
+                    <img src="../../../assets/images/cidenet-software-a-la-medida-medellin.png" class="logo-form">
+                </a>
+            </span>
+        </p>
+        <input class="login-username mt-5" type="text" name="titulo" placeholder="Titulo" formControlName="titulo" />
+        <input class="login-username" type="text" name="duracion" placeholder="Duracion" formControlName="duracion" />
+        <input class="login-username" type="text" name="precio" placeholder="Precio" formControlName="precio" />
+        <input class="login-username" type="text" name="pais" placeholder="Pais" formControlName="pais" />
+
+        <input class="login-username" type="text" name="trailer" placeholder="Trailer" formControlName="trailer" />
+        <input class="login-username" type="text" name="imagen" placeholder="Imagen" formControlName="imagen" />
+        <div>
+            <select name="select" formControlName="genero" class="login-username">
+                <option value="Accion" class="select">Accion</option>
+                <option value="Aventura" class="select">Aventura</option>
+                <option value="Ciencia Ficción" class="select">Ciencia Ficción.</option>
+                <option value="Comedia" class="select">Comedia</option>
+                <option value="Terror" class="select">Terror</option>
+                <option value="Fantasía" class="select">Fantasía</option>
+            </select>
+        </div>
+
+        <input type="submit" class="login-submit" value="Crear" (click)='create()'
+            *ngIf="!peliculaEditar.id else elseBlock" />
+        <ng-template #elseBlock>
+            <input type="submit" class="login-submit" value="Editar" (click)='create()'/>
+        </ng-template>
+    </form>
+    <a href="#" class="login-forgot-pass">forgot password?</a>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div>
+</div>
